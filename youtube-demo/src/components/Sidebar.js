@@ -9,8 +9,6 @@ const Sidebar = () => {
   
   const isMenuOpen = useSelector( store => store.app.isMenuOpen )
 
-  
-
   //early return pattern//
   if(!isMenuOpen) return null;
 
