@@ -2,28 +2,26 @@ import { Provider } from "react-redux";
 import Body from "./components/Body";
 import Head from "./components/Head";
 import store from "./utils/store";
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatcjPage from "./components/WatcjPage";
 
-
-const appRouter = createBrowserRouter([{
-  path: "/",
-  element: <Body/>,
-  children: [
-    {
-      path: "/",
-      element: <MainContainer/>
-    },
-    {
-      path: "watch",
-      element: <WatcjPage/>
-    },
-
-
-  ]
-
-}])
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Body />,
+    children: [
+      {
+        path: "/",
+        element: <MainContainer />,
+      },
+      {
+        path: "watch",
+        element: <WatcjPage />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
@@ -31,7 +29,6 @@ function App() {
       <div>
         <Head />
         <RouterProvider router={appRouter} />
-        
 
         {/**
          * Head
@@ -43,7 +40,6 @@ function App() {
          *      Video Container
          *        Video card
          */}
-         
       </div>
     </Provider>
   );
